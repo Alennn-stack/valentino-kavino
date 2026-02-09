@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hey MUMUUU ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Quicksand',sans-serif;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+  background:linear-gradient(135deg,#ff4e88,#ff1e56,#ff6fa3);
+}
+
+/* ENTRY SCREEN */
+#introScreen{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,#ff6fa3,#ff1e56);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  padding:20px;
+  cursor:pointer;
+}
+#introScreen h2{
+  font-family:'Pacifico',cursive;
+  font-size:2.5rem;
+}
+
+/* Floating background hearts */
+.bg-heart{
+  position:fixed;
+  font-size:22px;
+  animation:floatBg linear infinite;
+  opacity:0.25;
+}
+@keyframes floatBg{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-120vh)}
+}
+
+header{padding:60px 15px 20px}
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:3rem;
+  text-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* TIMER */
+.timer{
+  margin-top:15px;
+  font-size:1.05rem;
+  font-weight:600;
+  background:rgba(255,255,255,0.15);
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:20px;
+  backdrop-filter:blur(8px);
+}
+
+.message{
+  margin:25px auto;
+  max-width:650px;
+  background:rgba(255,255,255,0.12);
+  padding:20px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  line-height:1.7;
+  font-size:1.15rem;
+}
+
+.memories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:18px;
+  padding:20px;
+  max-width:800px;
+  margin:auto;
+}
+.card{
+  background:rgba(255,255,255,0.18);
+  border-radius:18px;
+  padding:18px;
+  backdrop-filter:blur(12px);
+  font-weight:600;
+}
+
+.gallery{ padding:30px 15px; }
+.gallery h2{
+  font-family:'Pacifico',cursive;
+  font-size:2rem;
+  margin-bottom:15px;
+}
+.photos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:15px;
+  max-width:800px;
+  margin:auto;
+}
+.photos img{
+  width:100%;
+  border-radius:15px;
+  object-fit:cover;
+  aspect-ratio:1/1;
+}
+
+/* BUTTONS */
+.buttons{
+  margin:50px auto;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+}
+
+button{
+  padding:20px 45px;
+  font-size:1.4rem;
+  border:none;
+  border-radius:45px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  transition:transform 0.2s ease;
+}
+
+#yesBtn{background:white;color:#ff1e56;}
+#noBtn{background:#ff1e56;color:white;}
+
+#successMessage{
+  display:none;
+  font-size:1.6rem;
+  margin:20px;
+  animation:fadeIn 1s forwards;
+}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* Faster Firework Explosion */
+@keyframes explode {
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Faster Falling Roses */
+@keyframes fall {
+  to { transform: translateY(110vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="introScreen">
+  <h2>⚠️ Warning ⚠️</h2>
+  <p>Entering this website may cause extreme smiling, blushing, and sudden feelings of love 💖<br>Tap at your own risk 😌</p>
+</div>
+
+<header>
+  <h1>Hey MUMUU ❤️</h1>
+  <div id="valentineTimer" class="timer"></div>
+</header>
+
+<div class="message">
+  From dropping you and picking you up from the metro💞,<br>
+  to our little random talks on the way that I never want to end 🥹,<br>
+  to endless kisses 😘 and my tiny pinky nipples which you love 😍 —<br>
+  every tiny moment with you feels like magic ✨<br>
+  You love small cute things… so here’s one more for my woman 💖
+</div>
+
+<div class="memories">
+  <div class="card">🏞️🚶 Eco park </div>
+  <div class="card">🛏️🍿🍕 rythmsss</div>
+  <div class="card">🚍🥂🌊 pondiii trip</div>
+  <div class="card">💋👩‍❤️‍💋‍👨 cute kisses</div>
+</div>
+
+<div class="gallery">
+  <h2>Our Cute Memories 📸</h2>
+  <div class="photos">
+    <img src="photo1.jpeg">
+    <img src="photo2.jpeg">
+    <img src="photo3.jpeg">
+    <img src="photo4.jpeg">
+    <img src="photo5.jpeg">
+    <img src="photo6.jpeg">
+  </div>
+</div>
+
+<div class="buttons">
+  <button id="yesBtn">Yes 💖</button>
+  <button id="noBtn">No 🙈</button>
+</div>
+
+<div id="successMessage">
+  you hv made me the most happiest man i love youuuu 24x7 !!! 🥰
+</div>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music=document.getElementById("bgMusic");
+document.getElementById("introScreen").addEventListener("click",()=>{
+  music.play();
+  document.getElementById("introScreen").style.display="none";
+});
+
+/* Valentine Countdown */
+function updateValentineTimer() {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  let valentine = new Date(`February 14, ${currentYear} 00:00:00`);
+  if (now > valentine) valentine = new Date(`February 14, ${currentYear + 1} 00:00:00`);
+  const diff = valentine - now;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  document.getElementById("valentineTimer").innerHTML =
+    `⏳ Countdown to Valentine’s Day:<br>${days}d ${hours}h ${minutes}m ${seconds}s 💖`;
+}
+setInterval(updateValentineTimer, 1000);
+updateValentineTimer();
+
+/* Floating background hearts */
+function createBgHeart(){
+  const heart=document.createElement("div");
+  heart.className="bg-heart";
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*5+5)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),10000);
+}
+setInterval(createBgHeart,500);
+
+/* Button size game */
+const yesBtn=document.getElementById("yesBtn");
+const noBtn=document.getElementById("noBtn");
+let yesScale=1;
+let noScale=1;
+
+noBtn.addEventListener("click",()=>{
+  yesScale+=0.15;
+  noScale-=0.1;
+  if(noScale<0.4) noScale=0.4;
+  yesBtn.style.transform=`scale(${yesScale})`;
+  noBtn.style.transform=`scale(${noScale})`;
+});
+
+/* YES Celebration */
+yesBtn.addEventListener("click",()=>{
+  document.getElementById("successMessage").style.display="block";
+  launchFireworks();
+  startRoseShower();
+});
+
+/* FASTER FIREWORKS */
+function launchFireworks(){
+  for(let i=0;i<90;i++){
+    const fw=document.createElement("div");
+    fw.innerHTML="✨";
+    fw.style.position="fixed";
+    fw.style.left=Math.random()*100+"vw";
+    fw.style.top=Math.random()*100+"vh";
+    fw.style.fontSize=Math.random()*25+18+"px";
+    fw.style.animation="explode 0.6s ease-out forwards";
+    document.body.appendChild(fw);
+    setTimeout(()=>fw.remove(),600);
+  }
+}
+
+/* HEAVIER FASTER ROSES */
+function startRoseShower(){
+  let interval=setInterval(()=>{
+    const rose=document.createElement("div");
+    rose.innerHTML="🌹";
+    rose.style.position="fixed";
+    rose.style.top="-30px";
+    rose.style.left=Math.random()*100+"vw";
+    rose.style.fontSize=Math.random()*10+22+"px";
+    rose.style.animation="fall 3s linear forwards";
+    document.body.appendChild(rose);
+    setTimeout(()=>rose.remove(),3000);
+  },50);
+  setTimeout(()=>clearInterval(interval),5000);
+}
+</script>
+
+</body>
+</html>
